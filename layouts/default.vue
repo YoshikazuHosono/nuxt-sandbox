@@ -4,8 +4,8 @@
       <v-app-bar-nav-icon />
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn @click="login">LOGIN</v-btn>
-      <v-btn @click="logout">LOGOUT</v-btn>
+      <v-btn v-if="!$store.state.isLogin" @click="login">LOGIN</v-btn>
+      <v-btn v-if="$store.state.isLogin" @click="logout">LOGOUT</v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
