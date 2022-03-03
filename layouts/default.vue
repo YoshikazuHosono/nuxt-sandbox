@@ -5,7 +5,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn v-if="!$store.state.isLogin" @click="login">LOGIN</v-btn>
-      <v-btn v-if="$store.state.isLogin" @click="logout">LOGOUT</v-btn>
+      <v-btn v-else @click="logout">LOGOUT</v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
