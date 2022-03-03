@@ -21,6 +21,17 @@
         <div>LOGIN={{ $store.state.isLogin }}</div>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>
+        <ul>
+          <li v-for="(post, index) in posts" :key="index">
+            <a :href="'post.url'" target="_blank" rel="noopener noreferrer">{{
+              post.title
+            }}</a>
+          </li>
+        </ul>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -30,6 +41,14 @@ export default {
     return {
       apiUrl: process.env.API_URL,
       env: process.env.ENV,
+      posts: {},
+    };
+  },
+  async asyncData({ $axios }) {
+    const url = "https://qiita.com/api/v2/items";
+    const response = await $axios.$get(url);
+    return {
+      posts: response,
     };
   },
 };
