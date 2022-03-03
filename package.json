@@ -23,6 +23,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/vuetify": "^1.12.3",
+    "axios-mock-server": "^0.19.1"
   }
 }
