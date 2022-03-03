@@ -25,7 +25,7 @@
       <v-col>
         <ul>
           <li v-for="(post, index) in posts" :key="index">
-            <a :href="'post.url'" target="_blank" rel="noopener noreferrer">{{
+            <a :href="post.url" target="_blank" rel="noopener noreferrer">{{
               post.title
             }}</a>
           </li>
