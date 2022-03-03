@@ -5,12 +5,8 @@ export const state = () => ({
       to: "/",
     },
     {
-      title: "TEST",
-      to: "/",
-    },
-    {
-      title: "TEST2",
-      to: "/",
+      title: "LOGIN",
+      to: "/login",
     },
   ],
 });
