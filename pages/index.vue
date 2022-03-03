@@ -17,6 +17,9 @@
       <v-col>
         <div>ENV={{ env }}</div>
       </v-col>
+      <v-col>
+        <div>MENU={{ items }}</div>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -27,6 +30,7 @@ export default {
     return {
       apiUrl: process.env.API_URL,
       env: process.env.ENV,
+      items: this.$store.state.menuItems,
     };
   },
 };
