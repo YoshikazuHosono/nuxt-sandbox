@@ -3,15 +3,14 @@
     <v-navigation-drawer app clipped v-model="drawer">
       <v-divider />
       <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="`menuItem-${i}`"
-          :to="item.to"
-        >
-          <v-list-item-content>
-            <v-list-item-title> {{ item.title }} </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <!-- v-if="isPermit(item.privilage)" -->
+        <template v-for="(item, i) in items" :to="item.to">
+          <v-list-item :to="item.to" v-if="isPermit(item.privilage)">
+            <v-list-item-content>
+              <v-list-item-title> {{ item.title }} </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app elevate-on-scroll>
@@ -45,6 +44,15 @@ export default {
     },
     logout() {
       this.$store.commit("logout");
+    },
+    isPermit(privilage) {
+      console.log(privilage);
+      if (privilage === "anyone") {
+        return true;
+      } else if (privilage === "general") {
+        return this.$store.state.isLogin == true;
+      }
+      return false;
     },
   },
   computed: {
