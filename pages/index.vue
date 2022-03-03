@@ -21,14 +21,6 @@
         <div>LOGIN={{ $store.state.isLogin }}</div>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
-        <v-btn @click="login">LOGIN</v-btn>
-      </v-col>
-      <v-col>
-        <v-btn @click="logout">LOGOUT</v-btn>
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 
@@ -39,14 +31,6 @@ export default {
       apiUrl: process.env.API_URL,
       env: process.env.ENV,
     };
-  },
-  methods: {
-    login() {
-      this.$store.commit("login");
-    },
-    logout() {
-      this.$store.commit("logout");
-    },
   },
 };
 </script>
