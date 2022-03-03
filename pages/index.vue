@@ -18,7 +18,15 @@
         <div>ENV={{ env }}</div>
       </v-col>
       <v-col>
-        <div>MENU={{ items }}</div>
+        <div>LOGIN={{ $store.state.isLogin }}</div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn @click="login">LOGIN</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn @click="logout">LOGOUT</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -30,8 +38,15 @@ export default {
     return {
       apiUrl: process.env.API_URL,
       env: process.env.ENV,
-      items: this.$store.state.menuItems,
     };
+  },
+  methods: {
+    login() {
+      this.$store.commit("login");
+    },
+    logout() {
+      this.$store.commit("logout");
+    },
   },
 };
 </script>
