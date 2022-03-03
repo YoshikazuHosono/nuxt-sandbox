@@ -45,12 +45,10 @@ export default {
       posts: {},
     };
   },
-  async asyncData({ $axios }) {
+  async mounted() {
     const url = "https://qiita.com/api/v2/items";
-    const response = await $axios.$get(url);
-    return {
-      posts: response,
-    };
+    const response = await this.$axios.$get(url);
+    this.posts = response;
   },
 };
 </script>
