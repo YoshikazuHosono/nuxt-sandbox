@@ -3,9 +3,13 @@
     <v-navigation-drawer app clipped v-model="drawer">
       <v-divider />
       <v-list>
-        <v-list-item>
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="`menuItem-${i}`"
+          :to="item.to"
+        >
           <v-list-item-content>
-            <v-list-item-title> TEST </v-list-item-title>
+            <v-list-item-title> {{ item.title }} </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -26,6 +30,8 @@
 </template>
 
 <script>
+import { get } from "vuex-pathify";
+
 export default {
   data() {
     return {
@@ -40,6 +46,9 @@ export default {
     logout() {
       this.$store.commit("logout");
     },
+  },
+  computed: {
+    items: get("app/menuItems"),
   },
 };
 </script>
