@@ -46,7 +46,6 @@ export default {
       this.$store.commit("logout");
     },
     isPermit(privilage) {
-      console.log(privilage);
       if (privilage === "anyone") {
         return true;
       } else if (privilage === "general") {
