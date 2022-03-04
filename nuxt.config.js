@@ -1,3 +1,4 @@
+import { _ } from "core-js";
 import colors from "vuetify/es5/util/colors";
 const envSetting = require(`./env/env-${process.env.NODE_ENV}.js`);
 
@@ -26,7 +27,13 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/mock.js"],
+  plugins: (() => {
+    const plugins = [];
+    if (envSetting.USE_MOCK) {
+      plugins.push("~/plugins/mock.js");
+    }
+    return plugins;
+  })(),
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
