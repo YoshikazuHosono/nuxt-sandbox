@@ -13,6 +13,7 @@
     "mock:watch": "axios-mock-server -w"
   },
   "dependencies": {
+    "@mdi/font": "^6.5.95",
     "@nuxtjs/axios": "^5.13.6",
     "axios": "^0.26.0",
     "core-js": "^3.19.3",
