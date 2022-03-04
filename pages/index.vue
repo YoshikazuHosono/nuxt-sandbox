@@ -12,12 +12,15 @@
     </v-row>
     <v-row>
       <v-col>
+        <v-icon>mdi-nintendo-switch</v-icon>
         <div>API_URL={{ apiUrl }}</div>
       </v-col>
       <v-col>
+        <v-icon>mdi-clipboard-text</v-icon>
         <div>ENV={{ env }}</div>
       </v-col>
       <v-col>
+        <v-icon>mdi-account</v-icon>
         <div>LOGIN={{ $store.state.isLogin }}</div>
       </v-col>
     </v-row>

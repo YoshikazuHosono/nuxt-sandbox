@@ -1,5 +1,10 @@
 # nuxt-sandbox
 
+## メモとリンク
+
+- mdi/font 一覧
+  <https://pictogrammers.github.io/@mdi/font/2.0.46/>
+
 ## Build Setup
 
 ```bash
@@ -40,7 +45,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 

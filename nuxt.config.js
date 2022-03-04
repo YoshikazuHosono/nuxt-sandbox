@@ -28,7 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: (() => {
-    const plugins = [];
+    const plugins = ["~/plugins/vuetify.js"];
+    // const plugins = [];
     if (envSetting.USE_MOCK) {
       plugins.push("~/plugins/mock.js");
     }
@@ -67,7 +68,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ["vuetify"],
+  },
 
   router: {
     middleware: ["auth"],
